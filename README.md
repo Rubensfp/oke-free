@@ -95,7 +95,11 @@ set OCI_CLI_AUTH=security_token
 3. Verifique se a configuração foi realizada com sucesso.
 
 ```
-oci session validate --config-file ~/.oci/config --profile DEFAULT --auth security_token
+oci session validate --config-file ~/.oci/config --profile k8s --auth security_token
+
+
+
+oci iam region list --config-file /home/rubens/.oci/config --profile k8s --auth security_token
 ```
 
 ## Criando o cluster
@@ -119,13 +123,13 @@ export TF_VAR_ssh_public_key=$(cat id_rsa.pub)
 3. Valide o tempo de vida do token de autenticação, aconselho que o tempo de vida seja maior que 30 minutos.
 
 ```
-oci session validate --config-file ~/.oci/config --profile DEFAULT --auth security_token
+oci session validate --config-file ~/.oci/config --profile k8s --auth security_token
 ```
 
 Caso o token esteja próximo de expirar, faça o refresh do token e exporte novamente.
 
 ```
-oci session refresh --config-file ~/.oci/config --profile DEFAULT --auth security_token
+oci session refresh --config-file ~/.oci/config --profile k8s --auth security_token
 ```
 
 ```

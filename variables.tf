@@ -7,7 +7,7 @@ variable "compartment_name" {
 
 variable "region" {
   type    = string
-  default = "us-ashburn-1"  
+  default = "sa-saopaulo-1"
 }
 
 # ---------->VM's----------
@@ -19,17 +19,17 @@ variable "shape" {
 
 variable "ocpus_per_node" {
   type    = number
-  default = 1
+  default = 2
 }
 
 variable "memory_in_gbs_per_node" {
   type    = number
-  default = 1
+  default = 8
 }
 
 variable "image_id" {
   type    = string
-  default = "ocid1.image.oc1.iad.aaaaaaaab2z4tdx4ozceelvzjzvvugwyavhco7mjuq44ejszrvw4yhz4za5a"
+  default = "ocid1.image.oc1.sa-saopaulo-1.aaaaaaaac55wdf4uqhb3ybs3fgwwirhhu3k5a45kbe3xundigck767ad7pdq"
 }
 # Link to a list of available images (Be sure to select the correct region and CPU architecture. We are using Oracle-Linux-8.8-2023.09.26-0-OKE-1.26.7-653)
 # https://docs.cloud.oracle.com/iaas/images/
@@ -54,12 +54,12 @@ variable "cluster_name" {
 
 variable "vcn_name" {
   type    = string
-  default = "k8s-vcn"  
+  default = "k8s-vcn"
 }
 
 variable "vcn_dns_label" {
   type    = string
-  default = "k8svcn"  
+  default = "k8svcn"
 }
 
 # ----------> Load Balancer <----------
@@ -82,5 +82,8 @@ variable "listerner_port" {
 # ----------> SSH <----------
 
 variable "ssh_public_key" {
-  type    = string
+  type = string
 }
+
+
+##150.230.93.29
